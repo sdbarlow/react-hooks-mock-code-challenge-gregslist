@@ -1,11 +1,16 @@
 import React from "react";
-// import ListingCard from "./ListingCard";
+//import { render } from "react-dom";
+import ListingCard from "./ListingCard";
 
-function ListingsContainer() {
+function ListingsContainer({Items, callback}) {
+let renderCard = Items.map((data) => {
+  return(<ListingCard onDelete={callback} id={data.id} key={data.id} image={data.image} description={data.description} location={data.location}/>)
+})
+
   return (
     <main>
       <ul className="cards">
-        {/* use the ListingCard component to display listings */}
+        {renderCard}
       </ul>
     </main>
   );

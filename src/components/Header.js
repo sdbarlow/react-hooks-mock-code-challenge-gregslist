@@ -1,7 +1,9 @@
 import React from "react";
 import Search from "./Search";
 
-function Header() {
+function Header({callback}) {
+
+
   return (
     <header>
       <h1>
@@ -10,7 +12,7 @@ function Header() {
         </span>
         gregslist
       </h1>
-      <Search />
+      <Search onType={callback}/>
     </header>
   );
 }
